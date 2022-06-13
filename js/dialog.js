@@ -1,4 +1,5 @@
 // Variáveis
+var conteudoForaDialog = document.querySelector('#conteudoForaDialog');
 var btnAbreDialog = document.querySelector('#abreDialog');
 var dialog = document.querySelector('.dialogNewsletter');
 var dialogBody = document.querySelector('.dialogNewsletter-body');
@@ -10,11 +11,14 @@ btnAbreDialog.style.display = 'block';
 btnAbreDialog.addEventListener('click', function() {
   dialog.classList.add('dialogNewsletter--aberto');
   document.querySelector('.dialogNewsletter-campo').focus();
+  conteudoForaDialog.inert = true;
 });
 
 function fechandoDialog() {
   document.activeElement.blur();
-  dialog.classList.remove('dialogNewsletter--aberto');     
+  dialog.classList.remove('dialogNewsletter--aberto');
+  conteudoForaDialog.inert = false;
+  btnAbreDialog.focus();
 }
 
 // Listeners
