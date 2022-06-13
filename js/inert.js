@@ -24,7 +24,7 @@
     var matches = Element.prototype.matches || Element.prototype.msMatchesSelector;
   
     /** @type {string} */
-    var _focusableElementsString = ['a[href]', 'area[href]', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])', 'button:not([disabled])', 'details', 'summary', 'iframe', 'object', 'embed', '[contenteditable]'].join(',');
+    var _focusableElementsString = ['a[href]', 'area[href]', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])', 'button:not([disabled])', 'details', 'summary', 'iframe', 'object', 'embed', '[contenteditable]', 'video'].join(',');
   
     /**
      * `InertRoot` manages a single inert subtree, i.e. a DOM subtree whose root element has an `inert`
