@@ -18,8 +18,10 @@
 .secaoContato-form-legend {
   max-width: 300px;
   line-height: 1.6;
-  text-align: center;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .secaoContato-form-cta {
