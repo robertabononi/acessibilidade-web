@@ -1,8 +1,6 @@
 //Variáveis
 var btns = document.querySelectorAll('.listaDeArtigos-slider-item');
-var new0 = document.querySelector('#new0');
-var new1 = document.querySelector('#new1');
-var new2 = document.querySelector('#new2');
+var noticias = document.querySelectorAll('.listaDeArtigos-item');
 
 new0.style.display = 'block';
 
@@ -16,21 +14,16 @@ indicadorSlideAtual.textContent = '(Slide atual)';
 btns.forEach(function(btn) {
   btn.addEventListener('click', function() {
 
-    btn.href = 'javascript:voide(0)'; //Evita o deslocamento da tela ao clicar em alguma notícia
+    //btn.href = 'javascript:voide(0)';
+    //Evita o deslocamento da tela ao clicar em alguma notícia
 
-    if (this.getAttribute('data-sliderItem') === '0') {
-      new0.style.display = 'block';
-      new1.style.display = 'none';
-      new2.style.display = 'none';
-    } else if (this.getAttribute('data-sliderItem') === '1') {
-      new0.style.display = 'none';
-      new1.style.display = 'block';
-      new2.style.display = 'none';
-    } else {
-      new0.style.display = 'none';
-      new1.style.display = 'none';
-      new2.style.display = 'block';
-    }
+    noticias.forEach(function(noticia) {
+      noticia.style.display = 'none';
+
+      if (this.getAttribute('data-sliderItem') === noticia.getAttribute('data-noticia')) {
+        noticia.style.display = 'block';
+      }
+    }.bind(this));
 
     document.querySelector('.listaDeArtigos-slider-item .escondeVisualmente').remove();
     this.append(indicadorSlideAtual);
@@ -42,4 +35,4 @@ btns.forEach(function(btn) {
 
     this.classList.add('listaDeArtigos-slider-item--ativo')
   })
-})
+});
